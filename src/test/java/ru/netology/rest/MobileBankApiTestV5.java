@@ -1,6 +1,7 @@
 package ru.netology.rest;
 
 import io.restassured.http.ContentType;
+import io.restassured.specification.Argument;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -20,7 +21,10 @@ class MobileBankApiTestV5 {
                 .then()
                 .statusCode(200)
                 .contentType(ContentType.JSON)
-                .body("every{ it.balance >= 0 }", is(true))
-        ;
+                .body("every{ it.balance >= 0 }", is(true));
+
     }
+
+
+
 }
